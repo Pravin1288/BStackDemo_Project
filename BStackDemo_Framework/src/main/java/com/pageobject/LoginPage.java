@@ -29,6 +29,12 @@ public class LoginPage extends Helper{
 		return elements;
 	}
 	
+	public WebElement UserNameInput()
+	{
+		elements = getElementId("react-select-2-input");
+		return elements;
+	}
+	
 	public WebElement Password() {
 		elements = getElementId(PasswordBox);
 		return elements;

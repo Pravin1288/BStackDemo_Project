@@ -1,6 +1,7 @@
 package com.process;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,10 +33,15 @@ public class LoginProcess extends Helper {
 		
 		//lp1.UserName().isDisplayed();
 		lp1.UserName().click();
+		//lp1.UserName().sendKeys("demouser");
 		//Select sel = new Select(lp1.UserName());
 		//sel.selectByIndex(1);
-		Thread.sleep(3000);
-		lp1.UserName().sendKeys("demouser");
+		Thread.sleep(2000);
+
+		lp1.UserNameInput().sendKeys("demouser");
+		//lp1.UserName().sendKeys(Keys.ARROW_DOWN);
+	//	lp1.UserName().sendKeys(Keys.ENTER);
+		
 		
 		lp1.Password().sendKeys("testingisfun99");
 		lp1.LogInButton().click();

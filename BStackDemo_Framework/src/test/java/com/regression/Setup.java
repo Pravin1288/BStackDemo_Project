@@ -8,14 +8,16 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 public class Setup {
 	
-	WebDriver driver;
+	public static WebDriver driver;
 	Properties prop=new Properties();
 	
-	@BeforeClass
+	@BeforeSuite
 	public void Initalization() throws IOException {
 		
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\Properties\\config.properties");
@@ -36,7 +38,7 @@ public class Setup {
 		System.out.println("Website Name : " + driver.getTitle());			
 	}
 	
-	@AfterClass
+	@AfterSuite
 	public void Cleanup() {
 		driver.quit();
 	}
